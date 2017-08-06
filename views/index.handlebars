@@ -1,29 +1,66 @@
-<h1>Eat Da Burger</h1>
+<div class = "container">
 
-<ul>
-  {{#each burgers}}
-    <li>
-      <p>
-        {{this.id}}. {{this.burger_name}}
+  <div class = "row">
+    <div class = "col-md-12">
+      <div class = "text-center">
 
-        <form action="/{{this.id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="id" value="{{this.id}}">
-          <button type="submit">Delete Burger</button>
+        <h1>Burger Time: Eat Da Burger Edition</h1>
+
+        <img src = "./img/burgers.png">
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-6">
+      <div class = "text-center">
+        <h2> Available to Eat </h2>
+          {{#each burgers}}
+            {{#unless this.devoured}}
+              <p>
+                {{this.id}}. {{this.burger_name}}
+                
+    <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="id" value="{{this.id}}">
+                  <button type="submit" id = "devour">Devour It!</button>
+                </form>
+              </p>
+              {{/unless}}
+            {{/each}}
+        </div>
+      </div>
+
+    <div class = "col-md-6">
+      <div class = "text-center">
+      <h2>Devoured</h2>
+      {{#each burgers}}
+            {{#if this.devoured}}
+              <p>
+                {{this.id}}. {{this.burger_name}}
+                <div class = "dev">{{this.devoured}}</div>
+              </p>
+              {{/if}}
+            {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-12">
+      <div class = "text-center">
+        <h2>Add a Burger</h2>
+        <form method="POST" action="/" class="button-size">
+        	<textarea type="text" name="burger"></textarea></br>
+          <button type="submit">Burger Time</button>
         </form>
-      </p>
-    </li>
-  {{/each}}
-</ul>
+      </div>
+    </div>
+  </div>
 
-<h2>Add a Burger</h2>
-<form method="POST" action="/" class="button-size">
-	<textarea type="text" name="burger"></textarea>
-	<button type="submit">Burger Time</button>
-</form>
 
-<h2>Update a Burger</h2>
-<form action="/?_method=PUT" method="POST" class="button-size">
-  <input type="text" name="id" placeholder="id">
-	<textarea type="text" name="burger" placeholder="Burger Name"></textarea>
-	<button type="submit">Update Burger!</button>
-</form>
+  <div class = "row">
+    <div class = "footer">
+    </div>
+  </div>
+
+</div>

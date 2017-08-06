@@ -6,6 +6,7 @@ module.exports = function(app) {
 app.get("/", function(req, res) {
 	db.Burger.findAll({}).then(function(dbBurger) {
     res.render("index", { burgers: dbBurger });
+    //res.json(dbBurger);
   })
 });
 
@@ -34,11 +35,11 @@ app.post("/", function(req, res) {
     });
   });
   // PUT route for updating todos. We can get the updated todo data from req.body
-  app.put("/", function(req, res) {
+  app.put("/:id", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Burger.update({
-      burger_name: req.body.burger,
+      devoured: true,
     }, {
       where: {
         id: req.body.id
