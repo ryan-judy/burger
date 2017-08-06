@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
 var app = express();
+var PORT = 3000;
 app.set('port', (process.env.PORT || 3000));
 
 var db = require("./models");
