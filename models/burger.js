@@ -6,10 +6,15 @@ module.exports = function(sequelize, DataTypes) {
     primaryKey: true
     },  
     burger_name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     devoured: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
   });
   return Burger;
