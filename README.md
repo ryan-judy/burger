@@ -12,4 +12,5 @@ An application built with MySQL, Node, Express, Handlebars and Sequelize ORM. Fo
 3. MySQL
 4. Sequelize ORM
 5. Handlebars
+
 [View the application live on Heroku!] (https://fathomless-gorge-99630.herokuapp.com)
