@@ -1,5 +1,4 @@
 
-
 # BurgerTime
 
 ## Overview
@@ -13,4 +12,4 @@ An application built with MySQL, Node, Express, Handlebars and Sequelize ORM. Fo
 4. Sequelize ORM
 5. Handlebars
 
-[View the application live on Heroku!] (https://fathomless-gorge-99630.herokuapp.com)
+[View the application live on Heroku!](https://fathomless-gorge-99630.herokuapp.com)
